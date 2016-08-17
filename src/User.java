@@ -5,14 +5,11 @@ public class User {
 	
 	private int id;
 	private HashMap<Integer, Integer> userRatings;
+	private HashMap<Integer, Double> predictedUserRatings;
 	
 	public User(int id) {
 		this.id = id;
 		this.userRatings = new HashMap<>();
-	}
-	
-	public void addToHashMap(int key, int value) {
-		this.userRatings.add(key, value);
 	}
 	
 
@@ -32,6 +29,20 @@ public class User {
 		this.userRatings = userRatings;
 	}
 	
+	public HashMap<Integer, Double> getPredictedUserRatings() {
+		return predictedUserRatings;
+	}
+	
+	private void setPredictedUserRatings(HashMap<Integer, Double> predictedUserRatings) {
+		this.predictedUserRatings = predictedUserRatings;
+	}
+	
+	
+	
+	public void addToHashMap(int key, int value) {
+		this.userRatings.add(key, value);
+	}
+	
 	
 
 	@Override
@@ -39,7 +50,7 @@ public class User {
 		
 		MapIterator<Integer, Integer> itr = userRatings.mapIterator();
 		
-		String outString = "userID: " + this.id;
+		String outString = "userID: " + this.id + '\n';
 		
 		while (itr.hasNext()) {
 			outString += " movieID: " + Integer.toString(itr.getCurrentKey()) + " userRating: " + Integer.toString(userRatings.get(itr.getCurrentKey())) + '\n';
