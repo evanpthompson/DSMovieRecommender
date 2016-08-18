@@ -10,6 +10,7 @@ public class User {
 	public User(int id) {
 		this.id = id;
 		this.userRatings = new HashMap<>();
+		this.predictedUserRatings = new HashMap<>();
 	}
 	
 
@@ -42,6 +43,12 @@ public class User {
 	public void addToHashMap(int key, int value) {
 		this.userRatings.add(key, value);
 	}
+	
+	public void addToHashMap(int key, double value) {
+		this.predictedUserRatings.add(key, value);
+	}
+	
+	
 	
 	
 

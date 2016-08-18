@@ -27,6 +27,10 @@ public class MovieStructure {
 	private void setMovieName(String movieName) {
 		this.movieName = movieName;
 	}
+	
+	public String movieName(int movieID) {
+		return getMovieName();
+	}
 
 
 	@Override
